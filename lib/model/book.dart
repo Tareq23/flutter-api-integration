@@ -24,7 +24,7 @@ class Book
 
   static List<Book> generateBookList (){
     return [
-      
+
     ];
   }
 
