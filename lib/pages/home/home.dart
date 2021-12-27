@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapiconsume/pages/home/widgets/custom_tab.dart';
 
 
 
@@ -10,13 +11,28 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var tabIndex=0;
+  final pageController = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
-      body: const Center(
-        child: Text('Home Page'),
-      ),
+      body: Column(
+        children: [
+            CustomTab(
+              tabIndex,
+                (int index){
+                  setState(() {
+                    tabIndex = index;
+                  });
+
+                  if(pageController.hasClients) {
+                    pageController.jumpToPage(index);
+                  }
+                }
+            )
+        ],
+      )
     );
   }
 
