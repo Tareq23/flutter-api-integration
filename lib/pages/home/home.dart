@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapiconsume/pages/home/widgets/book_staggered_grid_view.dart';
 import 'package:flutterapiconsume/pages/home/widgets/custom_tab.dart';
 
 
@@ -30,7 +31,18 @@ class _HomePageState extends State<HomePage> {
                     pageController.jumpToPage(index);
                   }
                 }
-            )
+            ),
+          Expanded(
+            child: BookStaggeredGridView(
+              tabIndex,
+              pageController,
+                (int index){
+                  setState(() {
+                    index = tabIndex;
+                  });
+                }
+            ),
+          ),
         ],
       )
     );
