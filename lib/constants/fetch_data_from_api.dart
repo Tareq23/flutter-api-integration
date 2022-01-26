@@ -5,32 +5,17 @@ import 'package:flutterapiconsume/model/users.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 class FetchApiData{
-
-
-
-
-  static Future readUserData(int id) async
+  static Future<UserModel> readUserData(int id) async
   {
     http.Response response = await http.get(Uri.parse(APIURL.SINGLE_USER+"$id"));
-    if(response.statusCode == 200)
-      {
-        var jsonData = json.decode(response.body);
-        return UserModel.fromJson(jsonData);
-      }
-    else {
-      return "Check Your Net connect!";
-    }
+    var jsonData = json.decode(response.body);
+    return UserModel.fromJson(jsonData);
   }
 
-  static Future readAllUserData() async
+  static Future<AllUsersModel> readAllUserData() async
   {
     http.Response response = await http.get(Uri.parse(APIURL.LIST_USER));
-    if(response.statusCode == 200){
       var jsonData = json.decode(response.body);
       return AllUsersModel.fromJson(jsonData);
-    }
-    else{
-      return "Check Your Internet Connection";
-    }
   }
 }

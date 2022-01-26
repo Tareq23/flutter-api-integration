@@ -6,14 +6,23 @@ class UserModel
   String? firstName;
   String? lastName;
   String? avatarUrl;
+  String? email;
 
+  UserModel.fromJsonFromUserList(Map<String,dynamic>parsedJson)
+  {
+    id = parsedJson['id'];
+    firstName = parsedJson['first_name'];
+    lastName  = parsedJson['last_name'];
+    avatarUrl = parsedJson['avatar'];
+    email = parsedJson['email'];
+  }
   UserModel.fromJson(Map<String,dynamic>parsedJson)
   {
-    var data = parsedJson['data'];
-    id = data['id'];
-    firstName = data['first_name'];
-    lastName  = data['last_name'];
-    avatarUrl = data['avatar'];
+    var user = parsedJson['data'];
+    id = user['id'];
+    firstName = user['first_name'];
+    lastName  = user['last_name'];
+    avatarUrl = user['avatar'];
+    email = user['email'];
   }
-
 }
