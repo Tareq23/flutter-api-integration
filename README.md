@@ -1,9 +1,10 @@
 
 ## Page Images
 
-<img width="300",height="500" src="https://github.com/Tareq23/flutter-api-integration/blob/master/screenshorts/Screenshot_20220127-041456.png"/>
-<img width="300",height="500" src="https://github.com/Tareq23/flutter-api-integration/blob/master/screenshorts/Screenshot_20220127-041508.png"/>
-
+<p align="center">
+  <img src="https://github.com/Tareq23/flutter-api-integration/blob/master/screenshorts/Screenshot_20220127-041456.png" width="350" title="All Users">
+  <img src="https://github.com/Tareq23/flutter-api-integration/blob/master/screenshorts/Screenshot_20220127-041508.png" width="350" title="User Details">
+</p>
 
 
 
